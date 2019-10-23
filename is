@@ -7,11 +7,12 @@
 // ld   [xx], y opcode 05xx
 // ld   x, y    opcode 06
 // ld   y, x    opcode 07
-// ld   sp, x   opcode 08
-// ld   sp, y   opcode 09
-// ld   sp, [x] opcode 0a
-// ld   sp, [y] opcode 0b
-// ld   sp,[xx] opcode 0c
+// ld   sp, xx  opcode 08xx
+// ld   sp, x   opcode 09
+// ld   sp, y   opcode 0a
+// ld   sp, [x] opcode 0b
+// ld   sp, [y] opcode 0c
+// ld   sp,[xx] opcode 0d
 
 // addx x, xx   opcode 10xx
 // addx y, xx   opcode 11xx
@@ -82,39 +83,72 @@
 
 // rstx         opcode 88
 // rsty         opcode 89
-// rst [xx]     opcode 8axx
-// rst [x]      opcode 8b
-// rst [y]      opcode 8c
+// rst  [xx]    opcode 8axx
+// rst  [x]     opcode 8b
+// rst  [y]     opcode 8c
 
-// jp  [xx]     opcode a0xx
-// jp  [x]      opcode a1
-// jp  [y]      opcode a2
-// jo  [xx]     opcode a3xx
-// jo  [x]      opcode a4
-// jo  [y]      opcode a5
-// jz  [xx]     opcode a6xx
-// jz  [x]      opcode a7
-// jz  [y]      opcode a8
-// ji  [xx]     opcode a9
-// ji  [x]      opcode aa
-// ji  [y]      opcode ab
-// jc  [xx]     opcode ac
-// jc  [x]      opcode ad
-// jc  [y]      opcode ae
-// jno [xx]     opcode afxx
-// jno [x]      opcode b0
-// jno [y]      opcode b1
-// jnz [xx]     opcode b2xx
-// jnz [x]      opcode b3
-// jnz [y]      opcode b4
-// jni [xx]     opcode b5
-// jni [x]      opcode b6
-// jni [y]      opcode b7
-// jnc [xx]     opcode b8
-// jnc [x]      opcode b9
-// jnc [y]      opcode ba
+// call [xx]    opcode 90
+// call [x]     opcode 91
+// call [y]     opcode 92
+// ret          opcode 93
 
-// push xx      opcode e0
+// jp   [xx]    opcode a0xx
+// jp   [x]     opcode a1
+// jp   [y]     opcode a2
+// jo   [xx]    opcode a3xx
+// jo   [x]     opcode a4
+// jo   [y]     opcode a5
+// jz   [xx]    opcode a6xx
+// jz   [x]     opcode a7
+// jz   [y]     opcode a8
+// ji   [xx]    opcode a9xx
+// ji   [x]     opcode aa
+// ji   [y]     opcode ab
+// jc   [xx]    opcode acxx
+// jc   [x]     opcode ad
+// jc   [y]     opcode ae
+// jno  [xx]    opcode afxx
+// jno  [x]     opcode b0
+// jno  [y]     opcode b1
+// jnz  [xx]    opcode b2xx
+// jnz  [x]     opcode b3
+// jnz  [y]     opcode b4
+// jni  [xx]    opcode b5xx
+// jni  [x]     opcode b6
+// jni  [y]     opcode b7
+// jnc  [xx]    opcode b8xx
+// jnc  [x]     opcode b9
+// jnc  [y]     opcode ba
+
+// brn  [xx]    opcode bbxx
+// brn  [x]     opcode bc
+// brn  [y]     opcode bd
+// bo   [xx]    opcode bexx
+// bo   [x]     opcode bf
+// bo   [y]     opcode c0
+// bz   [xx]    opcode c1xx
+// bz   [x]     opcode c2
+// bz   [y]     opcode c3
+// bi   [xx]    opcode c4xx
+// bi   [x]     opcode c5
+// bi   [y]     opcode c6
+// bc   [xx]    opcode c7xx
+// bc   [x]     opcode c8
+// bc   [y]     opcode c9
+// bno  [xx]    opcode caxx
+// bno  [x]     opcode cb
+// bno  [y]     opcode cc
+// bnz  [xx]    opcode cdxx
+// bnz  [x]     opcode ce
+// bnz  [y]     opcode cf
+// bni  [xx]    opcode d0xx
+// bni  [x]     opcode d1
+// bni  [y]     opcode d2
+// bnc  [xx]    opcode d3xx
+// bnc  [x]     opcode d4
+// bnc  [y]     opcode d5
+
+// push xx      opcode e0xx
 // push [xx]    opcode e1xx
 // push [x]     opcode e2
 // push [y]     opcode e3
@@ -123,17 +157,18 @@
 // push         opcode e6
 // popx         opcode e7
 // popy         opcode e8
-// pop [xx]     opcode e9xx
-// pop          opcode ea
+// pop          opcode e9
 
 // inx          opcode f0
 // outx         opcode f1
 // iny          opcode f2
 // outy         opcode f3
-// in [xx]      opcode f4
-// out [xx]     opcode f5
+// in [xx]      opcode f4xx
+// out [xx]     opcode f5xx
 // in [x]       opcode f6
-// out [y]      opcode f7
+// in [y]       opcode f7
+// out [x]      opcode f8
+// out [y]      opcode f9
 
 // nop          opcode fe
 // brk          opcode ff
