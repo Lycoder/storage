@@ -1,0 +1,139 @@
+// Instruction set
+// ld   x, xx   opcode 00xx
+// ld   y, xx   opcode 01xx
+// ld   x, [xx] opcode 02xx
+// ld   y, [xx] opcode 03xx
+// ld   [xx], x opcode 04xx
+// ld   [xx], y opcode 05xx
+// ld   x, y    opcode 06
+// ld   y, x    opcode 07
+// ld   sp, x   opcode 08
+// ld   sp, y   opcode 09
+// ld   sp, [x] opcode 0a
+// ld   sp, [y] opcode 0b
+// ld   sp,[xx] opcode 0c
+
+// addx x, xx   opcode 10xx
+// addx y, xx   opcode 11xx
+// addx x, y    opcode 12
+// addx y, x    opcode 13
+// addy x, xx   opcode 14xx
+// addy y, xx   opcode 15xx
+// addy x, y    opcode 16
+// addy y, x    opcode 17
+// subx x, xx   opcode 20xx
+// subx y, xx   opcode 21xx
+// subx x, y    opcode 22
+// subx y, x    opcode 23
+// suby x, xx   opcode 24xx
+// suby y, xx   opcode 25xx
+// suby x, y    opcode 26
+// suby y, x    opcode 27
+// mulx x, xx   opcode 30xx
+// mulx y, xx   opcode 31xx
+// mulx x, y    opcode 32
+// mulx y, x    opcode 33
+// muly x, xx   opcode 34xx
+// muly y, xx   opcode 35xx
+// muly x, y    opcode 36
+// muly y, x    opcode 37
+// divx x, xx   opcode 40xx
+// divx y, xx   opcode 41xx
+// divx x, y    opcode 42
+// divx y, x    opcode 43
+// divy x, xx   opcode 44xx
+// divy y, xx   opcode 45xx
+// divy x, y    opcode 46
+// divy y, x    opcode 47
+// ix           opcode 50
+// dx           opcode 51
+// iy           opcode 52
+// dy           opcode 53
+// im [xx]      opcode 54
+// dm [xx]      opcode 55
+// im [x]       opcode 56
+// dm [x]       opcode 57
+// im [y]       opcode 58
+// dm [y]       opcode 59
+// andx x, xx   opcode 60xx
+// andx y, xx   opcode 61xx
+// andx x, y    opcode 62
+// andx y, x    opcode 63
+// andy x, xx   opcode 64xx
+// andy y, xx   opcode 65xx
+// andy x, y    opcode 66
+// andy y, x    opcode 67
+// orx  x, xx   opcode 70xx
+// orx  y, xx   opcode 71xx
+// orx  x, y    opcode 72
+// orx  y, x    opcode 73
+// ory  x, xx   opcode 74xx
+// ory  y, xx   opcode 75xx
+// ory  x, y    opcode 76
+// ory  y, x    opcode 77
+// xorx x, xx   opcode 80xx
+// xorx y, xx   opcode 81xx
+// xorx x, y    opcode 82
+// xorx y, x    opcode 83
+// xory x, xx   opcode 84xx
+// xory y, xx   opcode 85xx
+// xory x, y    opcode 86
+// xory y, x    opcode 87
+
+// rstx         opcode 88
+// rsty         opcode 89
+// rst [xx]     opcode 8axx
+// rst [x]      opcode 8b
+// rst [y]      opcode 8c
+
+// jp  [xx]     opcode a0xx
+// jp  [x]      opcode a1
+// jp  [y]      opcode a2
+// jo  [xx]     opcode a3xx
+// jo  [x]      opcode a4
+// jo  [y]      opcode a5
+// jz  [xx]     opcode a6xx
+// jz  [x]      opcode a7
+// jz  [y]      opcode a8
+// ji  [xx]     opcode a9
+// ji  [x]      opcode aa
+// ji  [y]      opcode ab
+// jc  [xx]     opcode ac
+// jc  [x]      opcode ad
+// jc  [y]      opcode ae
+// jno [xx]     opcode afxx
+// jno [x]      opcode b0
+// jno [y]      opcode b1
+// jnz [xx]     opcode b2xx
+// jnz [x]      opcode b3
+// jnz [y]      opcode b4
+// jni [xx]     opcode b5
+// jni [x]      opcode b6
+// jni [y]      opcode b7
+// jnc [xx]     opcode b8
+// jnc [x]      opcode b9
+// jnc [y]      opcode ba
+
+// push xx      opcode e0
+// push [xx]    opcode e1xx
+// push [x]     opcode e2
+// push [y]     opcode e3
+// pushx        opcode e4
+// pushy        opcode e5
+// push         opcode e6
+// popx         opcode e7
+// popy         opcode e8
+// pop [xx]     opcode e9xx
+// pop          opcode ea
+
+// inx          opcode f0
+// outx         opcode f1
+// iny          opcode f2
+// outy         opcode f3
+// in [xx]      opcode f4
+// out [xx]     opcode f5
+// in [x]       opcode f6
+// out [y]      opcode f7
+
+// nop          opcode fe
+// brk          opcode ff
